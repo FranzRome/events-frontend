@@ -1,0 +1,70 @@
+
+
+.event-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 20px;
+   padding: 20px;
+ }
+ 
+ .event-card {
+   background-color: #fff;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   transition: transform 0.2s;
+ }
+ 
+ .event-card:hover {
+   transform: scale(1.02);
+ }
+ 
+ .event-card h2 {
+   margin-top: 0;
+   font-size: 1.5em;
+   color: #333;
+ }
+ 
+ .event-card p {
+   font-size: 1em;
+   color: #666;
+   margin: 10px 0;
+ }
+ 
+ .btn-details {
+   display: inline-block;
+   margin-top: 10px;
+   padding: 10px 20px;
+   background-color: #007bff;
+   color: #fff;
+   text-decoration: none;
+   border-radius: 4px;
+   transition: background-color 0.3s;
+ }
+ 
+ .btn-details:hover {
+   background-color: #0056b3;
+ }
+
+ .button-container {
+   text-align: center;
+   margin-top: 20px;
+ }
+ 
+
+ .btn-add-event {
+   padding: 10px 20px;
+   background-color: #28a745;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 1em;
+   transition: background-color 0.3s;
+ }
+ 
+ .btn-add-event:hover {
+   background-color: #218838;
+ }
+ 
