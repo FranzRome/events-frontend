@@ -2,13 +2,13 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import EventDetail from './components/EventDetail/EventDetail';
 import EventForm from './components/EventForm/EventForm';
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import EventList from './components/EventList/EventList';
-import Signup from './components/Signup';
+import Signup from './components/Signup/Signup';
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div className='App'>
       <Routes>
         <Route path="/events" element={<EventList />} />
         <Route path="/events/:id" element={<EventDetail />} />
