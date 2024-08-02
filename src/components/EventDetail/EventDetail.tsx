@@ -1,16 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import {Event } from "../../services/eventService";
+import { Link, useParams } from 'react-router-dom';
+import { Event } from "../../services/eventService";
 import axios from 'axios';
+import './EventDetail.css';
 
-/*interface Params {
-  id: string;
-}*/
-
-const EventDetail: React.FC = () => {
+const EventDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [event, setEvent] = useState<Event | null>(null);
-  const navigate = useNavigate();
   
   useEffect(() => {
     const fetchEvent = async () => {
@@ -24,10 +20,7 @@ const EventDetail: React.FC = () => {
 
     fetchEvent();
   }, [id]);
-  
-  const handleBackClick = () => {
-    navigate('/events');
-  };
+
 
    if (!id) {
       return <div>Error: Event ID not found</div>;
@@ -42,7 +35,7 @@ const EventDetail: React.FC = () => {
       <h1>{event.name}</h1>
       <p>{event.description}</p>
       <p>{new Date(event.date).toLocaleDateString()}</p>
-      <button type="button" onClick={handleBackClick}>Indietro</button>
+      <Link to="/events">Indietro</Link>
     </div>
   );
 };
