@@ -5,14 +5,15 @@ import EventForm from './components/EventForm/EventForm';
 import Login from './components/Login/Login';
 import EventList from './components/EventList/EventList';
 import Signup from './components/Signup/Signup';
+import './App.css'
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className='App'>
       <Routes>
         <Route path="/events" element={<EventList />} />
         <Route path="/events/:id" element={<EventDetail />} />
-        <Route path="/create-event" element={<EventForm />} />
+        <Route path="/event-form" element={<EventForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>

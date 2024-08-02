@@ -1,10 +1,11 @@
 import React from 'react';
+import './Login.css'
 
-const Login: React.FC = () => {
+const Login = () => {
   return (
     <div>
       <h1>Login</h1>
-      {/* Qui andrà la logica per il form di login */}
+      {}
     </div>
   );
 };

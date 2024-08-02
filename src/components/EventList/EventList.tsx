@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { getEvents, Event } from "../../services/eventService";
-import "./EventList.css";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getEvents, Event } from '../../services/eventService';
+import './EventList.css';
 
-const EventList: React.FC = () => {
+const EventList = () => {
    const [events, setEvents] = useState<Event[]>([]);
-   const navigate = useNavigate();
 
    useEffect(() => {
       fetchEvents();
@@ -20,10 +19,6 @@ const EventList: React.FC = () => {
       }
    };
 
-   const handleAddEvent = () => {
-      navigate("/create-event");
-   };
-
    return (
       <div>
          <div className="event-list">
@@ -35,11 +30,11 @@ const EventList: React.FC = () => {
                   <h2>{event.name}</h2>
                   <p>{event.description}</p>
                   <p>
-                     <strong>Data:</strong>{" "}
-                     {new Date(event.date).toLocaleDateString("it-IT", {
-                        year: "numeric",
-                        month: "numeric",
-                        day: "numeric",
+                     <strong>Data:</strong>{''}
+                     {new Date(event.date).toLocaleDateString('it-IT', {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
                      })}
                   </p>
                   <Link to={`/events/${event._id}`} className="btn-details">
@@ -49,7 +44,8 @@ const EventList: React.FC = () => {
             ))}
          </div>
          <div className='button-container'>
-               <button className='btn-add-event' onClick={handleAddEvent}>Aggiungi Nuovo Evento</button>
+               <Link to='/event-form' className='btn-add-event'>Aggiungi Evento</Link>
+               <Link to="/signup" className="btn-signup">Registrati</Link>
          </div>
       </div>
    );
