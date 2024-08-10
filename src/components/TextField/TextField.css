@@ -1,0 +1,18 @@
+.text-field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+   margin-top: 4px;
+   margin-bottom: 4px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 1em;
+   resize: none;
+   transition: border-color 0.3s, box-shadow 0.3s;
+ }
+
+ .text-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
