@@ -1,0 +1,44 @@
+.event-detail-container {
+   max-width: 60%;
+   margin: 0 auto;
+   padding: 24px 32px;
+   background-color: #ddd;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .name {
+   font-size: 2em;
+   margin-bottom: 8px;
+   color: #333;
+ }
+ 
+ .date, .description {
+   font-size: 1.2em;
+ }
+ 
+ .date {
+  font-style: italic;
+  margin: 0;
+  color: #444;
+ }
+
+ .description {
+  color: #222;
+ }
+
+ .event-detail-container a {
+   display: inline-block;
+   margin-top: 20px;
+   padding: 10px 20px;
+   background-color: #007bff;
+   color: white;
+   text-decoration: none;
+   border-radius: 4px;
+   transition: background-color 0.3s ease;
+ }
+ 
+ .event-detail-container a:hover {
+   background-color: #0056b3;
+ }
+ 
