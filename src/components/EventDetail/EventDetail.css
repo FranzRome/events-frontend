@@ -27,7 +27,7 @@
   color: #222;
  }
 
- .event-detail-container a {
+ .btn-back {
    display: inline-block;
    margin-top: 20px;
    padding: 10px 20px;
@@ -38,7 +38,7 @@
    transition: background-color 0.3s ease;
  }
  
- .event-detail-container a:hover {
+ .btn-back:hover {
    background-color: #0056b3;
  }
  

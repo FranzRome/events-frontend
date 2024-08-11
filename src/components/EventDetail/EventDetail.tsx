@@ -31,11 +31,13 @@ const EventDetail = () => {
   }
 
   return (
-    <div className="event-detail-container">
-      <h1 className='name'>{event.name}</h1>
-      <p className='date'>{new Date(event.date).toLocaleDateString()}</p>
-      <p className='description'>{event.description}</p>
-      <Link to="/events">Indietro</Link>
+    <div> 
+      <Link to="/events" className='btn-back'>Indietro</Link>
+      <div className="event-detail-container">
+        <h1 className='name'>{event.name}</h1>
+        <p className='date'>{new Date(event.date).toLocaleDateString()}</p>
+        <p className='description'>{event.description}</p>
+      </div>
     </div>
   );
 };
