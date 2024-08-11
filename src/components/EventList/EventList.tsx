@@ -8,12 +8,15 @@ import './EventList.css';
 const EventList = () => {
    const [events, setEvents] = useState<Event[]>([]);
    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+   const [username, setUsername] = useState<string | null>(null);
    const navigate = useNavigate();
 
    useEffect(() => {
       const token = localStorage.getItem('token');
-      if (token) {
+      const storedUsername = localStorage.getItem('username');
+      if (token && storedUsername) {
          setIsAuthenticated(true);
+         setUsername(storedUsername);
          fetchEvents();
       } else {
          navigate('/login');
@@ -31,6 +34,7 @@ const EventList = () => {
 
    const handleLogout = () => {
       localStorage.removeItem('token');
+      localStorage.removeItem('username');
       setIsAuthenticated(false);
       navigate('/login');
    };
@@ -40,8 +44,11 @@ const EventList = () => {
          {isAuthenticated ? (
             <div>
                <h1>
-                 Lista Eventi
+                 Benvenuto, {username}!
                </h1>
+               <h2>
+                 Lista Eventi
+               </h2>
                <div className="event-list">
                   {events.length === 0 ? (
                      <p>Caricamento...</p>
@@ -71,13 +78,6 @@ const EventList = () => {
                     backgroundColor="#28a745"
                     onClick={() => navigate('/event-form')}
                   />
-                  {/*
-                  <Button
-                    text="Registrati"
-                    backgroundColor="#007bff"
-                    onClick={() => navigate('/signup')}
-                  />
-                  */}
                   <Button
                     text="Logout"
                     backgroundColor="#dc3545"
