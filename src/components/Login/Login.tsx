@@ -18,13 +18,11 @@ const Login = () => {
             username,
             password,
          });
-         console.log(response.data)
          localStorage.setItem("token", response.data.access_token);
          localStorage.setItem('username', response.data.user);
          navigate("/events"); // Update with success route
       } catch (error: any) {
          // Error handling
-         console.log(error)
          const errorMessage =
             error.response?.data?.message || "Login failed. Please try again.";
          setError(errorMessage);
