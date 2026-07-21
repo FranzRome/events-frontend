@@ -50,7 +50,7 @@ const EventForm: React.FC = () => {
         <div>
           <label htmlFor="date">Data</label>
           <input
-            type="datetime-local"
+            type="date"
             id="date"
             {...register('date', { required: 'La data è obbligatoria' })}
           />
